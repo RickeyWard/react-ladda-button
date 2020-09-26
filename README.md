@@ -29,7 +29,10 @@ class Example extends Component {
   }
 }
 ```
-More examples on the [Live Demo](https://rickeyward.github.io/react-ladda-button/)
+More examples in the [Live Demo](https://rickeyward.github.io/react-ladda-button/). The API is virtually identical to [Ladda](https://github.com/hakimel/Ladda).
+
+### considerations
+The spinner style attributes are only used on first spinner creation, then the spinner is cached. This seems like something that likely never changes. If you need these to change, use a key to force the button to get recreated. This isn't an oversight its a conscious choice.
 
 ## License
 
