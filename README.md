@@ -20,15 +20,16 @@ npm install --save react-ladda-button
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-ladda-button'
+import LaddaButton, {EXPAND_LEFT} from 'react-ladda-button'
 import 'react-ladda-button/dist/ladda.themeless.min.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <LaddaButton data-style={EXPAND_LEFT}>I'm a button!</LaddaButton>
   }
 }
 ```
+More examples on the [Live Demo](https://rickeyward.github.io/react-ladda-button/)
 
 ## License
 
