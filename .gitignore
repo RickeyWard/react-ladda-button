@@ -6,7 +6,9 @@ node_modules
 
 # builds
 build
-dist
+dist/**/*
+!dist/ladda-themeless.min.css
+!dist/ladda.min.css
 .rpt2_cache
 
 # misc

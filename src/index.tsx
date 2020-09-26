@@ -49,7 +49,8 @@ export interface LaddaButtonProps {
   'data-spinner-lines'?: number;
 }
 
-export const LaddaButton: React.FC<LaddaButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = React.memo(({className, children, disabled, loading, progress, ...restProps}) => {
+export const LaddaButton: React.FC<LaddaButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = React.memo(
+  ({className, children, disabled, loading, progress, ...restProps}) => {
   
   const buttonRef = useRef<HTMLButtonElement>(null);
   const spinner = useRef<Spinner>();
@@ -108,7 +109,7 @@ export const LaddaButton: React.FC<LaddaButtonProps & React.ButtonHTMLAttributes
       }
 
       if(!spinner.current) spinner.current = createSpinner();
-      spinner.current?.spin(buttonRef.current?.querySelector('.ladda-spinner') as HTMLElement||undefined);
+        spinner.current?.spin(buttonRef.current?.querySelector('.ladda-spinner') as HTMLElement||undefined);
     } else{
       if (spinner) {
         //make sure the spinner keeps spinning for the button contracting animation
@@ -116,6 +117,8 @@ export const LaddaButton: React.FC<LaddaButtonProps & React.ButtonHTMLAttributes
         return ()=>clearTimeout(tv);
       }
     }
+
+    //ts doesn't like sometimesy returns
     return undefined;
   }, [loading])
 
@@ -132,7 +135,7 @@ export const LaddaButton: React.FC<LaddaButtonProps & React.ButtonHTMLAttributes
     >
       <span className="ladda-label">{children}</span>
       <span className="ladda-spinner"></span>
-      {progress && progress !== 0 &&
+      {progress &&
         <div
           className="ladda-progress"
           style={{width: ((Math.max(Math.min(progress||0, 1), 0)) * (buttonRef.current?.offsetWidth||0)) + 'px'}}>

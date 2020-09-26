@@ -1,5 +1,5 @@
 import 'react-ladda-button/dist/ladda.min.css';
-import 'react-ladda-button/dist/bootstrap.min.css';
+import './bootstrap.min.css';
 import React, { useState } from 'react';
 import LaddaButton, { EXPAND_LEFT, EXPAND_RIGHT, EXPAND_UP, EXPAND_DOWN, CONTRACT, CONTRACT_OVERLAY, ZOOM_OUT, ZOOM_IN, SLIDE_LEFT, SLIDE_RIGHT, SLIDE_UP, SLIDE_DOWN } from 'react-ladda-button';
 
@@ -98,33 +98,35 @@ const App = () => {
         {"import LaddaButton, { EXPAND_LEFT } from 'react-ladda-button\nimport 'react-ladda-button/dist/ladda.themeless.min.css\n\nconst MyComponent ()=> (\n  <LaddaButton className=\"btn btn-primary btn-lg\" data-style={EXPAND_LEFT}>Submit</LaddaButton>\n);"}
       </pre>
       </div>
-      {([EXPAND_LEFT, EXPAND_RIGHT, EXPAND_UP, EXPAND_DOWN] as const).map((sv)=>(
-        <section key={`bootstrap-${sv}`}>
-          <h3>{sv}</h3>
-          <ExLoadingLaddaButton className="btn btn-success btn-lg" data-style={sv}>Submit</ExLoadingLaddaButton>
+      <div className="bootstrapfont">
+        {([EXPAND_LEFT, EXPAND_RIGHT, EXPAND_UP, EXPAND_DOWN] as const).map((sv)=>(
+          <section key={`bootstrap-${sv}`}>
+            <h3>{sv}</h3>
+            <ExLoadingLaddaButton className="btn btn-success btn-lg" data-style={sv}>Submit</ExLoadingLaddaButton>
+          </section>
+        ))}
+        {([CONTRACT, CONTRACT_OVERLAY, ZOOM_IN, ZOOM_OUT] as const).map((sv)=>(
+          <section key={`bootstrap-${sv}`}>
+            <h3>{sv}</h3>
+            <ExLoadingLaddaButton style={{zIndex: sv === CONTRACT_OVERLAY ? 10 : 'unset'}} className="btn btn-danger btn-lg" data-style={sv}>Submit</ExLoadingLaddaButton>
+          </section>
+        ))}
+        {([SLIDE_LEFT, SLIDE_RIGHT, SLIDE_UP, SLIDE_DOWN] as const).map((sv)=>(
+          <section key={`bootstrap-${sv}`}>
+            <h3>{sv}</h3>
+            <ExLoadingLaddaButton className="btn btn-primary btn-lg" data-style={sv}>Submit</ExLoadingLaddaButton>
+          </section>
+        ))}
+        <h3>Built-in progress bar</h3>
+        <section>
+          <h3>{EXPAND_LEFT}</h3>
+          <ExProgressLaddaButton className="btn btn-lg btn-info" data-style={EXPAND_LEFT}>Submit</ExProgressLaddaButton>
         </section>
-      ))}
-      {([CONTRACT, CONTRACT_OVERLAY, ZOOM_IN, ZOOM_OUT] as const).map((sv)=>(
-        <section key={`bootstrap-${sv}`}>
-          <h3>{sv}</h3>
-          <ExLoadingLaddaButton style={{zIndex: sv === CONTRACT_OVERLAY ? 10 : 'unset'}} className="btn btn-danger btn-lg" data-style={sv}>Submit</ExLoadingLaddaButton>
+        <section>
+          <h3>{CONTRACT}</h3>
+          <ExProgressLaddaButton className="btn btn-lg btn-info" data-style={CONTRACT}>Submit</ExProgressLaddaButton>
         </section>
-      ))}
-      {([SLIDE_LEFT, SLIDE_RIGHT, SLIDE_UP, SLIDE_DOWN] as const).map((sv)=>(
-        <section key={`bootstrap-${sv}`}>
-          <h3>{sv}</h3>
-          <ExLoadingLaddaButton className="btn btn-primary btn-lg" data-style={sv}>Submit</ExLoadingLaddaButton>
-        </section>
-      ))}
-      <h3>Built-in progress bar</h3>
-      <section>
-        <h3>{EXPAND_LEFT}</h3>
-        <ExProgressLaddaButton className="btn btn-lg btn-info" data-style={EXPAND_LEFT}>Submit</ExProgressLaddaButton>
-      </section>
-      <section>
-        <h3>{CONTRACT}</h3>
-        <ExProgressLaddaButton className="btn btn-lg btn-info" data-style={CONTRACT}>Submit</ExProgressLaddaButton>
-      </section>
+      </div>
   </article>
 }
 
