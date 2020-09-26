@@ -8,6 +8,13 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
+  "keywords": [
+    "react",
+    "typescript",
+    "ladda",
+    "hooks",
+    "buttons"
+  ],
   "engines": {
     "node": ">=10"
   },
