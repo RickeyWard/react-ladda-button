@@ -1,7 +1,7 @@
 {
   "name": "react-ladda-button",
-  "version": "1.0.0",
-  "description": "Hooks based ladda buttons wrapper in TS",
+  "version": "1.0.1",
+  "description": "Ladda port to react in typescript and hooks",
   "author": "RickeyWard",
   "license": "MIT",
   "repository": "RickeyWard/react-ladda-button",
