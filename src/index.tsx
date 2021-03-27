@@ -135,7 +135,7 @@ export const LaddaButton: React.FC<LaddaButtonProps & React.ButtonHTMLAttributes
     >
       <span className="ladda-label">{children}</span>
       <span className="ladda-spinner"></span>
-      {progress &&
+      {!!progress &&
         <div
           className="ladda-progress"
           style={{width: ((Math.max(Math.min(progress||0, 1), 0)) * (buttonRef.current?.offsetWidth||0)) + 'px'}}>
