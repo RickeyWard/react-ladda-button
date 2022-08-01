@@ -21,7 +21,7 @@ npm install --save react-ladda-button
 import React, { Component } from 'react'
 
 import LaddaButton, {EXPAND_LEFT} from 'react-ladda-button'
-import 'react-ladda-button/dist/ladda.themeless.min.css'
+import 'react-ladda-button/dist/ladda-themeless.min.css'
 
 class Example extends Component {
   render() {
