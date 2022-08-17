@@ -1,6 +1,6 @@
 {
   "name": "react-ladda-button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Ladda port to react in typescript and hooks",
   "author": "RickeyWard",
   "license": "MIT",

@@ -53,7 +53,7 @@ const App = () => {
       <h2>To get started</h2>
       <code>npm i react-ladda-button  |  yarn add react-ladda-button</code>
       <p>include the CSS <small>themeless for custom button styles like use with bootstrap</small></p>
-      <code>import 'react-ladda-button/dist/ladda.min.css';  |  import 'react-ladda-button/dist/ladda.themeless.min.css';
+      <code>import 'react-ladda-button/dist/ladda.min.css';  |  import 'react-ladda-button/dist/ladda-themeless.min.css';
       </code>
       <p>Import and get Ladda-ing</p>
       <pre>
